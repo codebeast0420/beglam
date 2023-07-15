@@ -6,6 +6,7 @@ import {
   useClearByFocusCell,
 } from 'react-native-confirmation-code-field';
 import Modal from 'react-native-modal';
+import { useColorScheme } from 'nativewind';
 
 import Text from '_components/Text';
 import Button from '_components/Button';
@@ -19,6 +20,7 @@ const ConfirmAccount = ({ navigation, route }) => {
   const [openModal, setOpenModal] = useState(false);
   const [code, setCode] = useState('');
   const [error, setError] = useState(null);
+  const { colorScheme } = useColorScheme();
   const [props, getCellOnLayoutHandler] = useClearByFocusCell({
     value: code,
     setValue: setCode,
@@ -43,7 +45,8 @@ const ConfirmAccount = ({ navigation, route }) => {
       navigation.goBack();
       route.params?.checkPhone();
     } else {
-      navigation.navigate('ClientHome');
+      if(colorScheme == 'dark') navigation.navigate('ProHome');
+      else navigation.navigate('ClientHome')
     }
   };
 

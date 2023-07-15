@@ -92,12 +92,8 @@ const Sidebar = () => {
                     <Text className="text-white dark:text-black font-gilroy-bold">{colorScheme === 'light' ? 'Client' : 'Professional'}</Text>
                   </View>
                 </View>
-                {/* <Pressable
+                <Pressable
                   onPress={() => navigation.navigate(colorScheme === 'light' ? 'ProHome' : 'ClientHome')}
-                  className="w-32 flex-row items-center py-2 px-4 rounded-2xl border border-secondary-200 dark:border-[#ffffff]"
-                > */}
-                  <Pressable
-                  onPress={() => navigation.navigate('ClientHome')}
                   className="w-32 flex-row items-center py-2 px-4 rounded-2xl border border-secondary-200 dark:border-[#ffffff]"
                 >
                   <SwitchIcon color={colorScheme === 'light' ? '#EEA4A7' : 'white'} />

@@ -6,6 +6,7 @@ import Text from '_components/Text';
 import Button from '_components/Button';
 import Input, { PasswordInput } from '_components/Input';
 import { LockIcon, WarningIcon } from '_components/icons';
+import { useColorScheme } from 'nativewind';
 
 const Background = require('_assets/images/auth/signup-bg.png');
 const Logo = require('_assets/images/logo.png');
@@ -20,6 +21,7 @@ const Register = ({ navigation }) => {
   });
   const [errors, setErrors] = useState(null);
   const [errorMsg, setErrorMsg] = useState('');
+  const { setColorScheme } = useColorScheme();
 
   const handleInput = name => value => {
     if (name === 'phone_number') {
@@ -34,6 +36,7 @@ const Register = ({ navigation }) => {
 
   const register = () => {
     if (!validate()) return;
+    setColorScheme('light');
 
     navigation.navigate('ConfirmAccount');
   };

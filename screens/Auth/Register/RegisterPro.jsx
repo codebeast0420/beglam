@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { ImageBackground, Image, View, Pressable, ScrollView } from 'react-native';
 import { formatWithMask, Masks } from 'react-native-mask-input';
+import { useColorScheme } from 'nativewind';
 
 import Text from '_components/Text';
 import Button from '_components/Button';
@@ -22,6 +23,7 @@ const RegisterPro = ({ navigation }) => {
     password: '',
     confirmationCode: '',
   });
+  const { setColorScheme } = useColorScheme();
   const [phoneNumbers, setPhoneNumbers] = useState(['']);
   const [errors, setErrors] = useState(null);
   const [errorMsg, setErrorMsg] = useState('');
@@ -57,6 +59,7 @@ const RegisterPro = ({ navigation }) => {
 
   const register = async () => {
     if (!validate()) return;
+    setColorScheme('dark');
     const body = {
 			data: data,
 		};

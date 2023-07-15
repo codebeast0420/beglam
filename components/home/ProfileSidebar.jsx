@@ -77,17 +77,18 @@ const ProfileSidebar = () => {
 
           <View className="h-[1px] bg-white mt-6 mb-4"></View>
 
-          {/* <Pressable
-            className="flex-row items-center bg-primary-200 dark:bg-[#68CBAD] py-3 -mx-6 px-6"
-            onPress={() => navigation.navigate(colorScheme === 'light' ? 'ProHome' : 'ClientHome')}
-          > */}
           <Pressable
             className="flex-row items-center bg-primary-200 dark:bg-[#68CBAD] py-3 -mx-6 px-6"
-            onPress={() => navigation.navigate('ClientHome')}
+            onPress={() => navigation.navigate(colorScheme === 'light' ? 'ProHome' : 'ClientHome')}
           >
             <Image source={colorScheme === 'light' ? AvatarPro : Avatar} className="w-14 h-14 rounded-3xl" />
             <View className="ml-3">
               <Text className="text-white text-lg font-gilroy-bold">Stella Stewart</Text>
+              {/* {profileState ? (
+                <Text>True</Text>
+              ) : (
+                <Text>False</Text>
+              )} */}
               <Text className="text-white text-xs font-gilroy-bold">{colorScheme === 'light' ? 'Professional' : 'Client'}</Text>
             </View>
           </Pressable>
