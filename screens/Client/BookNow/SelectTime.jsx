@@ -51,17 +51,17 @@ const SelectTime = ({ onNext }) => {
               enableSwipeMonths={true}
               renderArrow={direction => direction === 'left' ? <ArrowLeftIcon /> : <ArrowLeftIcon className="rotate-180" />}
               markedDates={{
-                '2023-02-14': { marked: true, dotColor: '#2EC89A', },
-                '2023-02-15': { marked: true, dotColor: '#ED6960', },
-                '2023-02-16': { marked: true, dotColor: '#2EC89A', },
-                '2023-02-17': { marked: true, dotColor: '#ED6960', },
-                '2023-02-18': { marked: true, dotColor: '#2EC89A', },
-                '2023-02-19': { selected: true },
+                '2023-07-14': { marked: true, dotColor: '#ED6960', },
+                '2023-07-15': { marked: true, dotColor: '#ED6960', },
+                '2023-07-16': { marked: true, dotColor: '#ED6960', },
+                '2023-07-17': { marked: true, dotColor: '#ED6960', },
+                '2023-07-18': { marked: true, dotColor: '#ED6960', },
+                '2023-07-19': { selected: true },
               }}
               theme={{
                 arrowColor: '#EEA4A7',
                 dayTextColor: '#000000',
-                monthTextColor: '#4D509E',
+                monthTextColor: '#2EC89A',
                 textSectionTitleColor: '#000000',
                 textMonthFontFamily: 'Gilroy-Regular',
                 textDayHeaderFontFamily: 'Gilroy-Regular',
@@ -71,9 +71,15 @@ const SelectTime = ({ onNext }) => {
                 textDayHeaderFontSize: 24,
                 'stylesheet.day.basic': {
                   selected: {
-                    backgroundColor: '#4D509E',
+                    backgroundColor: '#2EC89A',
                     borderRadius: 12
-                  }
+                  },
+                  today: {
+                    borderColor: '#ffe6e6', 
+                    backgroundColor: '#ffe6e6',
+                    borderWidth: 2,
+                    borderRadius: 12, 
+                  },
                 }
               }}
             />
